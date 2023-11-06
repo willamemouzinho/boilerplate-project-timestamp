@@ -24,46 +24,6 @@ app.get("/api/hello", function (req, res) {
   res.json({ greeting: "hello API" });
 });
 
-// const weekDays = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
-// const months = [
-//   "Jan",
-//   "Feb",
-//   "Mar",
-//   "Apr",
-//   "May",
-//   "Jun",
-//   "Jul",
-//   "Aug",
-//   "Sep",
-//   "Oct",
-//   "Nov",
-//   "Dec",
-// ];
-// const regexDate = new RegExp(".");
-
-// const formatDate = (date) =>
-//   `${date.weekDay}, ${date.day} ${date.month} ${date.year} ${date.time} GMT`;
-
-// const getInfoDate = (unformattedDate) => {
-//   const formattedDate = new Date(unformattedDate);
-
-//   if (!formattedDate) {
-//     return "Erro na data da reuisição";
-//   }
-
-//   return {
-//     weekDay: weekDays[formattedDate.getUTCDay()],
-//     day:
-//       formattedDate.getUTCDate() < 9
-//         ? `0${formattedDate.getUTCDate()}`
-//         : formattedDate.getUTCDate(),
-//     month: months[formattedDate.getUTCMonth()],
-//     year: formattedDate.getUTCFullYear(),
-//     time: formattedDate.toUTCString(),
-//     unix: formattedDate.getTimezoneOffset,
-//   };
-// };
-
 app.get("/api/:timestamp", function (req, res) {
   const timestampFromRequest = req.params.timestamp;
 
