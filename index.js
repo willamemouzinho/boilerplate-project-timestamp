@@ -24,6 +24,7 @@ app.get("/api/hello", function (req, res) {
   res.json({ greeting: "hello API" });
 });
 
+/*
 app.get("/api/:timestamp", function (req, res) {
   const timestampFromRequest = req.params.timestamp;
 
@@ -42,13 +43,23 @@ app.get("/api/:timestamp", function (req, res) {
   return res.json(result);
 });
 
-app.get("/api/", function (req, res) {
+app.get("/api", function (req, res) {
   const currentDate = new Date();
 
   return res.json({
     unix: currentDate.getTime(),
     utc: currentDate.toUTCString(),
   });
+});
+*/
+
+app.get("/api/whoami", (req, res) => {
+  const ipaddress = req.ip;
+  const language = req.headers['accept-language'];
+  const software = req.headers['user-agent'];
+  console.log(ipAddress, req);
+  return res.json({ipaddress, language, software});
+  // return res.json({req})
 });
 
 // listen for requests :)
